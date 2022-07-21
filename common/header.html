@@ -1,0 +1,19 @@
+<script type="text/discourse-plugin" version="0.8">
+  //加骰子
+  const currentLocale = I18n.currentLocale();
+  if (!I18n.translations[currentLocale].js.composer) {
+    I18n.translations[currentLocale].js.composer = {};
+  }
+  I18n.translations[currentLocale].js.composer.ttl_dice_text = "输入点数上限";
+  I18n.translations[currentLocale].js.ttl_dice_title = "ttl-dice";
+  api.onToolbarCreate(function(toolbar) {
+    toolbar.addButton({
+      id: "ttl-dice",
+      icon: "ttl-dice-icon",
+      group: "extras",
+      preventFocus: true,
+      trimLeading: true,
+      perform: (e) => e.applySurround("[wrap=dice]d", "[/wrap]", "ttl_dice_text")
+    });
+  });
+</script>
