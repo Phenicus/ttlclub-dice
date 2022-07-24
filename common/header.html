@@ -1,0 +1,46 @@
+<script type="text/discourse-plugin" version="0.8">
+  //加玻璃
+  const currentLocale = I18n.currentLocale();
+  if (!I18n.translations[currentLocale].js.composer) {
+    I18n.translations[currentLocale].js.composer = {};
+  }
+  I18n.translations[currentLocale].js.composer.ttl_spoiler_text = "插入隐藏内容";
+  I18n.translations[currentLocale].js.ttl_dice_title = "ttl-spoiler";
+  api.onToolbarCreate(function(toolbar) {
+    toolbar.addButton({
+      id: "ttl-spoiler",
+      icon: "ttl-spoiler-icon",
+      group: "extras",
+      preventFocus: true,
+      trimLeading: true,
+      perform: (e) => e.applySurround("[spoiler]", "[/spoiler]", "ttl_spoiler_text")
+    });
+  });
+</script>
+<script type="text/discourse-plugin" version="0.8">
+  //加骰子
+  const currentLocale = I18n.currentLocale();
+  if (!I18n.translations[currentLocale].js.composer) {
+    I18n.translations[currentLocale].js.composer = {};
+  }
+  I18n.translations[currentLocale].js.composer.ttl_dice_text = "输入点数上限";
+  I18n.translations[currentLocale].js.ttl_dice_title = "ttl-dice";
+  api.onToolbarCreate(function(toolbar) {
+    toolbar.addButton({
+      id: "ttl-dice",
+      icon: "ttl-dice-icon",
+      group: "extras",
+      preventFocus: true,
+      trimLeading: true,
+      perform: (e) => e.applySurround("[wrap=dice]d", "[/wrap]", "ttl_dice_text")
+    });
+  });
+</script>
+<script type="text/discourse-plugin" version="0.8">
+  //replace the fic intro icon
+  api.replaceIcon('code', 'ttl-ficintro-icon');
+</script>
+<script type="text/discourse-plugin" version="0.8">
+  //replace the create topicsicon
+  api.replaceIcon('plus', 'ttl-create-topic');
+</script>
