@@ -72,11 +72,8 @@
       group: "fontStyles",
       icon: "ttl-br",
       preventFocus: true,
-      perform: (e) =>
-        e.applyList("<br/>", "br_text",{
-          applyEmptyLines: true,
-          multiline: true,
-        }),
+      trimLeading: true,
+      perform: (e) => e.applySurround("<br>", "  ", "br_text"),
     });
   });
 </script>
@@ -95,11 +92,8 @@
       group: "fontStyles",
       icon: "ttl-hr",
       preventFocus: true,
-      perform: (e) =>
-        e.applyList("<hr>", "hr_text",{
-          applyEmptyLines: true,
-          multiline: true,
-        }),
+      trimLeading: true,
+      perform: (e) => e.applySurround("<hr>", "  ", "hr_text"),
     });
   });
 </script>
