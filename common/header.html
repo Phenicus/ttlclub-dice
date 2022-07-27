@@ -72,7 +72,10 @@
       group: "fontStyles",
       icon: "ttl-br",
       perform: (e) =>
-        e.applyList("<br/>", "br_text"),
+        e.applyList("<br/>", "br_text",{
+          applyEmptyLines: true,
+          multiline: true,
+        }),
     });
   });
 </script>
@@ -91,7 +94,10 @@
       group: "fontStyles",
       icon: "ttl-hr",
       perform: (e) =>
-        e.applyList("<hr>", "hr_text"),
+        e.applyList("<hr>", "hr_text",{
+          applyEmptyLines: true,
+          multiline: true,
+        }),
     });
   });
 </script>
