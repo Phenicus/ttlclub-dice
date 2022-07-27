@@ -1,0 +1,106 @@
+<script type="text/discourse-plugin" version="0.8">
+  //add spoiler btn to the toolbar
+  const currentLocale = I18n.currentLocale();
+  if (!I18n.translations[currentLocale].js.composer) {
+    I18n.translations[currentLocale].js.composer = {};
+  }
+  I18n.translations[currentLocale].js.composer.ttl_spoiler_text = "插入隐藏内容";
+  I18n.translations[currentLocale].js.ttl_spoiler_title = "可隐藏毛玻璃";
+  api.onToolbarCreate(function(toolbar) {
+    toolbar.addButton({
+      id: "ttl-spoiler",
+      title: "ttl_spoiler_title",
+      icon: "ttl-spoiler-icon",
+      group: "extras",
+      preventFocus: true,
+      trimLeading: true,
+      perform: (e) => e.applySurround("[spoiler]", "[/spoiler]", "ttl_spoiler_text")
+    });
+  });
+</script>
+<script type="text/discourse-plugin" version="0.8">
+  //add dice btn to the toolbar
+  const currentLocale = I18n.currentLocale();
+  if (!I18n.translations[currentLocale].js.composer) {
+    I18n.translations[currentLocale].js.composer = {};
+  }
+  I18n.translations[currentLocale].js.composer.ttl_dice_text = "输入点数上限";
+  I18n.translations[currentLocale].js.ttl_dice_title = "骰子";
+  api.onToolbarCreate(function(toolbar) {
+    toolbar.addButton({
+      id: "ttl-dice",
+      title: "ttl_dice_title",
+      icon: "ttl-dice-icon",
+      group: "extras",
+      preventFocus: true,
+      trimLeading: true,
+      perform: (e) => e.applySurround("[wrap=dice]d", "[/wrap]", "ttl_dice_text")
+    });
+  });
+</script>
+<script type="text/discourse-plugin" version="0.8">
+  //add underline btn to the toolbar
+  const currentLocale = I18n.currentLocale();
+  if (!I18n.translations[currentLocale].js.composer) {
+    I18n.translations[currentLocale].js.composer = {};
+  }
+  I18n.translations[currentLocale].js.composer.underline_ui_default_text =
+    "下划线内容";
+  I18n.translations[currentLocale].js.ttl_underline_title = "下划线";
+  api.onToolbarCreate(function (toolbar) {
+    toolbar.addButton({
+      id: "underline",
+      title: "ttl_underline_title",
+      group: "fontStyles",
+      icon: "ttl-underline",
+      perform: (e) => e.applySurround("[u]", "[/u]", "underline_ui_default_text"),
+    });
+  });
+</script>
+<script type="text/discourse-plugin" version="0.8">
+  //add br btn to the toolbar
+  const currentLocale = I18n.currentLocale();
+  if (!I18n.translations[currentLocale].js.composer) {
+    I18n.translations[currentLocale].js.composer = {};
+  }
+  I18n.translations[currentLocale].js.composer.br_text = "";
+  I18n.translations[currentLocale].js.ttl_br_title = "空行符";
+  api.onToolbarCreate(function (toolbar) {
+    toolbar.addButton({
+      id: "underline",
+      title: "ttl_br_title",
+      group: "fontStyles",
+      icon: "ttl-br",
+      perform: (e) =>
+        e.applyList("<br/>", "br_text"),
+    });
+  });
+</script>
+<script type="text/discourse-plugin" version="0.8">
+    //add hr btn to the toolbar
+    const currentLocale = I18n.currentLocale();
+  if (!I18n.translations[currentLocale].js.composer) {
+    I18n.translations[currentLocale].js.composer = {};
+  }
+  I18n.translations[currentLocale].js.composer.hr_text = "";
+  I18n.translations[currentLocale].js.ttl_hr_title = "分隔符";
+  api.onToolbarCreate(function (toolbar) {
+    toolbar.addButton({
+      id: "underline",
+      title: "ttl_hr_title",
+      group: "fontStyles",
+      icon: "ttl-hr",
+      perform: (e) =>
+        e.applyList("<hr>", "hr_text"),
+    });
+  });
+</script>
+
+<script type="text/discourse-plugin" version="0.8">
+  //replace the fic intro icon
+  api.replaceIcon('code', 'ttl-ficintro-icon');
+</script>
+<script type="text/discourse-plugin" version="0.8">
+  //replace the create topicsicon
+  api.replaceIcon('plus', 'ttl-create-topic');
+</script>
