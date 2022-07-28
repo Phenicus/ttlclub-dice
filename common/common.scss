@@ -3,19 +3,19 @@
   flex-flow: wrap;
 }
 .my-totop-btn {
-  background-color: var(--quaternary);
-  padding: 2%;
+  background-color: var(--primary-high);
+  padding: 1%;
   padding-right: 2%;
-  border-radius: 2em;
+  border-radius: 0.67rem;
   border: 0ch;
   position: fixed;
-  bottom: 6em;
-  left: 2em;
-  z-index: 888;
-  opacity: 70%;
+  bottom: 2.58rem;
+  right: 1.33rem;
+  z-index: 1000;
+  opacity: 65%;
 }
 .my-totop-btn a {
   color: white;
-  font-size: x-large;
+  /*font-size: x-large;*/
   font-weight: 1000;
 }
