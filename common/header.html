@@ -118,13 +118,13 @@
   type="text/x-handlebars"
   data-template-name="/connectors/before-create-topic-button/totop"
 >
-  {{#if canCreateTopic}}
+  {{#unless createTopicButtonDisabled}}
     <div class="my-totop-btn">
       <a href="#top">
-        {{d-icon "ttl-totop"}}  置顶
+        {{d-icon "ttl-totop"}}
       </a>
     </div>
-    {{/if}}
+    {{/unless}}
 </script>
 <!--to top btn in full page search page-->
 <script
