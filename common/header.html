@@ -119,12 +119,10 @@
   data-template-name="/connectors/before-create-topic-button/totop"
 >
   {{#unless createTopicButtonDisabled}}
-    <button class="my-totop-btn">
-      <a href="#top">
-        {{d-icon "ttl-totop"}}
-      </a>
-    </button>
-    {{/unless}}
+  <button id="totop" class="btn-default btn no-text btn-icon">
+    <a href="#top"> {{d-icon "ttl-totop"}} </a>
+  </button>
+  {{/unless}}
 </script>
 <!--to top btn in full page search page-->
 <script
