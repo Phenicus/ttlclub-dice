@@ -4,17 +4,26 @@
 }
 .search-totop-btn {
   background-color: var(--primary-high);
+  /*
   padding: 2px;
   padding-right: 5px;
   border-radius: 0.67rem;
+  */
   border: 0ch;
   position: fixed;
   bottom: 2.58rem;
   right: 2.1rem;
   z-index: 1000;
   opacity: 0.8;
+  height: 3em;
+  width: 3em;
+  border-radius: 50%;
 }
 .search-totop-btn a {
   color: white;
   font-weight: 1000;
+}
+.search-totop-btn .svg-icon {
+  width: 1.5em;
+  height: 1.5em;
 }
